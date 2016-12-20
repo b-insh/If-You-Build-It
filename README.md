@@ -2,7 +2,7 @@
 
 If You Build It is a tool that works across browsers to handle AJAX requests, place and remove event listeners, and manipulate the DOM.
 
-If You Build it returns promises from its ajax calls. Success and error callbacks can be chained onto the original call with `.then()` allowing for greater flexibility when making requests.
+If You Build It returns promises from its ajax calls. Success and error callbacks can be chained onto the original call with `.then()` allowing for greater flexibility when making requests.
 ```js
 $l.ajax = options => {
 
