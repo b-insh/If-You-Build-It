@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>If You Build It</title>
+    <script type="text/javascript" src="./lib/if_you_build_it.js" charset="utf-8"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" charset="utf-8"></script>
+
+    <style media="screen">
+
+    .plum {
+      background-color: #DDA0DD;
+    }
+
+  </style>
+
+  </head>
+  <body>
+    <script>
+      $l(() => {
+        $l('.remove-me').remove();
+
+        setInterval(() => {
+          $l('outer-div').toggleClass('plum')
+        }, 1000)
+      });
+
+    </script>
+    <div></div>
+
+    <div class="outer-div">
+      <div class="inner-div">
+        <p class="remove-me">Remove me!</p>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+
+        <ul>
+          <li></li>
+        </ul>
+
+      </div>
+      <a class="link" href="#"></a>
+    </div>
+  </body>
+</html>
