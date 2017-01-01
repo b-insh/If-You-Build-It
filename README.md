@@ -4,7 +4,7 @@ If You Build It is a tool that works across browsers to handle AJAX requests, pl
 
 ## Getting Started
 
-There are two ways to take advantage of the If You Build It's functionality in your own projects.
+There are two ways to take advantage of If You Build It's functionality in your own projects.
 
 1. Download `dist/if_you_build_it.js` and include it in your program.
 2. Download the `src` folder and use webpack to compile the files.
