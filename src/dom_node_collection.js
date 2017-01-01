@@ -3,12 +3,12 @@ class DOMNodeCollection {
     this.HTMLElements = HTMLElements;
   }
 
-  html(selector) {
-    if(selector === undefined) {
+  html(content) {
+    if(content === undefined) {
       return this.HTMLElements[0].innerHTML;
     } else {
       this.HTMLElements.forEach((el) => {
-        el.innerHTML = selector;
+        el.innerHTML = content;
       });
     }
   }
@@ -32,28 +32,28 @@ class DOMNodeCollection {
     }
   }
 
-  attr(key, val) {
+  attr(className, val) {
     if (typeof val === "string") {
-      this.HTMLElements.forEach(node => node.setAttribute(key, val));
+      this.HTMLElements.forEach(node => node.setAttribute(className, val));
     } else {
-      return this.HTMLElements[0].getAttribute(key);
+      return this.HTMLElements[0].getAttribute(className);
     }
   }
 
-  addClass(selector) {
-    const selectors = selector.split(" ");
+  addClass(className) {
+    const classNames = className.split(" ");
     this.HTMLElements.forEach(el => {
-      selectors.forEach(selector => {
-        el.classList.add(selector);
+      classNames.forEach(className => {
+        el.classList.add(className);
       });
     });
   }
 
-  removeClass(selector) {
-    const selectors = selector.split(" ");
+  removeClass(className) {
+    const classNames = className.split(" ");
     this.HTMLElements.forEach(el => {
-      selectors.forEach(selector => {
-        el.classList.remove(selector);
+      classNames.forEach(className => {
+        el.classList.remove(className);
       });
     });
   }
