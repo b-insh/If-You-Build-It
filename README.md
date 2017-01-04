@@ -6,8 +6,8 @@ If You Build It is a tool that works across browsers to handle AJAX requests, pl
 
 There are two ways to take advantage of If You Build It's functionality in your own projects.
 
-1. Download `dist/if_you_build_it.js` and include it in your program.
-2. Download the `src` folder and use webpack to compile the files.
+1. Git clone this repo and include `dist/if_you_build_it.js` as a script in your program.
+2. Git clone this repo and include the  `src` folder in your program. Use webpack to compile the files.
 
 ## API
 
@@ -22,6 +22,9 @@ There are two ways to take advantage of If You Build It's functionality in your 
 - `remove()`: Removes all children from the element.
 -  `on(action, callback)`: Sets an event listener on the element that will run the given callback function when triggered.
 - `off(action)`: Removes the event listener from the element.
+- `$l(arg)`: If the argument is a function, the function will be stored until the document has fully loaded. If the argument is a CSS selector or an HTML element, `$l` will return an array of all elements that include the given argument.
+- `$l.extend(base, ...objects)`: Returns merged JavaScript objects
+- `$l.ajax(options)`: Sends an ajax request with default values for contentType, method, url, data, and success and error callbacks. Returns a promise which will fire chained methods when the request returns.
 
 ## Features
 
