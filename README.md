@@ -19,6 +19,7 @@ A DOMNodeCollection is a custom class that contains any number of HTML Elements.
 - `$l.extend(base, ...objects)`: Returns merged JavaScript objects
 - `$l.ajax(options)`: Sends an ajax request with default values for contentType, method, url, data, and success and error callbacks. Returns a promise which will fire chained methods when the request returns.
 
+### DOMNodeCollection API
 
 - `html(content)`: Replaces the inner HTML of the element with content. If no arguments are given, it will return the inner HTML of the element.
 - `empty()`: Clears the inner HTML of the element.
