@@ -9,11 +9,20 @@ There are two ways to take advantage of If You Build It's functionality in your 
 1. Git clone this repo and include `dist/if_you_build_it.js` as a script in your program.
 2. Git clone this repo and include the  `src` folder in your program. Use webpack to compile the files.
 
+## DOM Node Collection
+
+A DOMNodeCollection is a custom class that contains any number of HTML Elements. It preserves the tree structure of each of the DOM nodes.
+
 ## API
+
+- `$l(arg)`: If the argument is a function, the function will be stored until the document has fully loaded. If the argument is a CSS selector or an HTML element, `$l` will return a DOMNodeCollection of all elements that include the given argument.
+- `$l.extend(base, ...objects)`: Returns merged JavaScript objects
+- `$l.ajax(options)`: Sends an ajax request with default values for contentType, method, url, data, and success and error callbacks. Returns a promise which will fire chained methods when the request returns.
+
 
 - `html(content)`: Replaces the inner HTML of the element with content. If no arguments are given, it will return the inner HTML of the element.
 - `empty()`: Clears the inner HTML of the element.
-- `append(children)`: Will add the children to the end of the element. The children can be an HTML element, a string or another collection of DOM nodes.
+- `append(children)`: Will add the children to the end of the element. The children can be an HTML element, a string or a DOMNodeCollection.
 - `attr(className, val)`: If both arguments are given, an HTML class with the given value will be set on the element. If only the first argument is given, the value of the given className will be returned if it exists.
 - `addClass(className)` and `removeClass(className)`: Adds or removes classes from an element. Multiple classes may be added or removed at once.
 - `children()`: Returns an array of all children of the element.
@@ -22,11 +31,10 @@ There are two ways to take advantage of If You Build It's functionality in your 
 - `remove()`: Removes all children from the element.
 -  `on(action, callback)`: Sets an event listener on the element that will run the given callback function when triggered.
 - `off(action)`: Removes the event listener from the element.
-- `$l(arg)`: If the argument is a function, the function will be stored until the document has fully loaded. If the argument is a CSS selector or an HTML element, `$l` will return an array of all elements that include the given argument.
-- `$l.extend(base, ...objects)`: Returns merged JavaScript objects
-- `$l.ajax(options)`: Sends an ajax request with default values for contentType, method, url, data, and success and error callbacks. Returns a promise which will fire chained methods when the request returns.
 
 ## Features
+
+### Addition and Removal of Selectors
 
 If You Build It allows for extensive DOM access and manipulation. For example, users can add and remove multiple class attributes at a time to alter their page with greater ease than individual selection or single class name changes.
 
@@ -49,6 +57,8 @@ removeClass(selector) {
   });
 }
 ```
+### Appending Children
+
 Additionally, If You Build It is able to successfully complete commands with arguments of different types. If a user wishes to `.append(children)` to certain nodes, they are able to pass in the children as an HTML Element, a string, or as a DOMNodeCollection and will receive back their intended result.
 
 ```js
@@ -67,6 +77,7 @@ append(children) {
   }
 }
 ```
+### Addition and Removal of Event Listeners
 
 If You Build It allows the user to place and remove event listeners on node elements. This is accomplished by storing the callback function inside the node object on placement and retrieving it when `.off()` is called.
 
@@ -94,6 +105,7 @@ off(action) {
   });
 }
 ```
+### Promise-Returning AJAX Calls
 
 If You Build It returns promises from its ajax calls. Success and error callbacks can be chained onto the original call with `.then()` allowing for greater flexibility when making requests.
 ```js
